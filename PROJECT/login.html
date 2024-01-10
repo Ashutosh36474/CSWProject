@@ -1,0 +1,111 @@
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link href="sign-up.css" rel="stylesheet">
+    <style>
+        *{
+    font-size: 1.2rem;
+    padding: 0%;
+    margin: 0%;
+    
+}
+form{
+    justify-content: center;
+}
+.container{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid salmon;
+    border-radius: 13px;
+    margin: 115px auto;
+    padding: 30px 26px 0px 23px;
+    width: 371px;
+    height: 412px;
+    background-color: #cfcfd6;
+}
+
+.bg{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.6;
+    height: 100vh;
+}
+
+
+input{
+    width: 251px;;
+    height: 41px;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-color: #ff000000;
+}
+a{
+    margin-top: 7px;
+    color: blue;
+}
+a:hover{
+    color: rgb(185, 185, 199);
+    
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 109px;
+    height: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #26222200;
+}
+.btn:hover{
+    background-color: black;
+}
+.btnn{
+    padding-top: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    </style>
+
+</head>
+<script>
+    function validate() {
+        var n = document.getElementById('email_id').value;
+        var p = document.getElementById('pass_id').value;
+
+    }
+</script>
+
+<body>
+    <img class="bg"
+        src="https://img.freepik.com/free-vector/flat-design-travel-background_23-2149193475.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704672000&semt=ais">
+    
+        <h1>
+            <u>Login page</u>
+        </h1>
+        <div class="container_login">
+            <form autocomplete="off" action="login_page.php" method="post" onsubmit="return validate()">
+                email: <input type="email" name="eml" id="email_login_id" required>
+                <br><br>
+                password: <input type="password" name="pass" id="pass_login_id" required>
+                <div class="btnn"><br><br>
+                    <input class="btn_login" type="submit" value="LOGIN">
+                </div>
+            </form>
+            <br><br>
+            <a href="sign-up.html">New user-Sign Up</a>
+        </div>
+    
+</body>
+
+</html>

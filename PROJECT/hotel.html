@@ -1,0 +1,155 @@
+<html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+  $("#bookBtn").click(function() {
+   
+    const checkInDate = $("#checkInDate").val();
+    const checkOutDate = $("#checkOutDate").val();
+    const roomType = $("#roomType").val();
+
+    
+    if (!checkInDate || !checkOutDate) {
+      $("#bookingResult").html("<p>Please select check-in and check-out dates.</p>");
+      return;
+    }
+
+    const duration = Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24);
+
+   
+    let totalPrice;
+    switch (roomType) {
+      case "single":
+        totalPrice = duration * 100;
+        break;
+      case "double":
+        totalPrice = duration * 150;
+        break;
+      case "suite":
+        totalPrice = duration * 200;
+        break;
+      default:
+        totalPrice = 0;
+    }
+
+    
+    const resultHtml = `<p>Your booking details:</p>
+                        <p>Check-in Date: ${checkInDate}</p>
+                        <p>Check-out Date: ${checkOutDate}</p>
+                        <p>Room Type: ${roomType}</p>
+                        <p>Total Price: $${totalPrice}</p>`;
+    $("#bookingResult").html(resultHtml);
+  });
+});
+
+</script>
+   <style>
+body {
+  background-color: #f8f9fac1;
+  
+}
+body {
+            background-image: url('https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?cs=srgb&dl=pexels-donald-tong-189296.jpg&fm=jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f8f9fac1;
+ }
+ .container-fluid{
+  padding-top: 20px;
+ }
+       
+
+.container {
+  background-color:rgb(239, 232, 232);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+   </style> 
+</head>
+<body>
+  <div>
+    <h1 style="background-color:blue;color:white; margin: auto; padding-left: 600px;height: 100px;"><img src="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png" height="100px" width="100px">T<sub>i</sub>C<sup>k</sup>E<sub>t</sub>E<sup>a</sup>S<sub>e</sub>.com</h1>
+    <h2 style="background-color:blue;color:white;">Seamless Journeys, Effortless Tickets...... </h2>
+</div>   
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Hotel Booking System</h2>
+    
+    <div class="form-row">
+      <div class="col-md-4">
+        <label for="checkInDate">Check-in Date:</label>
+        <input type="date" class="form-control" id="checkInDate">
+      </div>
+      <div class="col-md-4">
+        <label for="checkOutDate">Check-out Date:</label>
+        <input type="date" class="form-control" id="checkOutDate">
+      </div>
+      <div class="col-md-4">
+        <label for="roomType">Room Type:</label>
+        <select class="form-control" id="roomType">
+          <option value="single">Single</option>
+          <option value="double">Double</option>
+          <option value="suite">Suite</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn btn-warning mt-3 " id="bookBtn"><a href="Homepage.html">Book Now</a></button>
+
+    <div class="mt-4" id="bookingResult"></div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="card">
+    <img src="https://gos3.ibcdn.com/top-1549373953.jpg"
+    height="150px">
+    <div class="card-body">
+    <p>Save 30% using code SEC36 </p>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="card">
+    <img src= "https://www.ugaescapes.com/ugabay/wp-content/uploads/sites/4/2018/10/530x320-4.jpg" height="150px" >
+    <div class="card-body">
+    <p> 10X Rewards on Hotel Tickets using HDFC Bank Credit Cards </p>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="card">
+    <img src= "https://images.via.com/static/dynimg/search_page/40/normal/1016988951-1016988950_up-to-70-off-on-all-hotels-offer-994-x-415-1jpg.jpg"
+    height="150px" >
+    <div class="card-body">
+    <p>Use promocode Hotel70</p>
+    </div>
+    </div>
+
+ 
+</body>
+</html>
